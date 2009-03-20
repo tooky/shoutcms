@@ -5,12 +5,17 @@ class LayoutsController < ApplicationController
 
   def create
     @layout = Layout.new(params[:layout])
-    if @layout.save
-      redirect_to layout_path(@layout)
+    respond_to do |format|
+      format.html do
+        if @layout.save
+          flash[:notice] = "Layout created successfully"
+          redirect_to layout_path(@layout)
+        end
+      end
     end
   end
 
   def show
-    render :text => 'ok'
+
   end
 end
