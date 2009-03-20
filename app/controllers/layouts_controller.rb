@@ -5,6 +5,12 @@ class LayoutsController < ApplicationController
 
   def create
     @layout = Layout.new(params[:layout])
+    if @layout.save
+      redirect_to layout_path(@layout)
+    end
+  end
+
+  def show
     render :text => 'ok'
   end
 end

@@ -6,7 +6,8 @@ module NavigationHelpers
       root_path
     when /the layout creation page/
       new_layout_path
-
+    when /the "(.+)" layout page/
+      layout_path($1)
     
     # Add more page name => path mappings here
     

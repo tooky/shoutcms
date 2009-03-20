@@ -9,5 +9,5 @@ Scenario: Sucessful Submission
 
    When I add a new layout
 
-   Then I should see the page for my newly created layout
+   Then I should be redirected to the "main" layout page
     And I should see "Layout created successfully"

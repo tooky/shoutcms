@@ -11,6 +11,4 @@ END
   click_button('Create Layout')
 end
 
-Then /^I should see the page for my newly created layout$/ do
-  pending
-end
+

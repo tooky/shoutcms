@@ -101,3 +101,16 @@ end
 Then /^the "([^\"]*)" checkbox should be checked$/ do |label|
   field_labeled(label).should be_checked
 end
+
+
+Then /^I should be on (.+?)$/ do |page_name|
+  request.request_uri.should == path_to(page_name)
+  response.should be_success
+end
+ 
+Then /^I should be redirected to (.+?)$/ do |page_name|
+  request.headers['HTTP_REFERER'].should_not be_nil
+  request.headers['HTTP_REFERER'].should_not == request.request_uri
+  
+  Then "I should be on #{page_name}"
+end
