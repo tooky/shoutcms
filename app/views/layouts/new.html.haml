@@ -1,0 +1,10 @@
+.layout
+  - form_for @layout do |f|
+    .name
+      = f.label :name, "Name"
+      = f.text_field :name
+    .content
+      = f.label :content, "Content"
+      = f.text_area :content
+    .controls
+      = submit_tag "Create Layout"
